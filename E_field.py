@@ -56,20 +56,20 @@ def plot_field(wl,pol, theta_i, n_med, n_input, d_list, metal_coat):
     
     Ef=0.75
     Eb=0
-    x_list, n_list, Ex, Ey, Ez = el.get_E_field(wl, pol, theta_i, np.flipud(n_input), np.flipud(d_list), Ef, Eb)
+    x_list, n_list,  Ez = el.get_E_field(wl, pol, theta_i, np.flipud(n_input), np.flipud(d_list), Ef, Eb)
     
     
    
     n_max=max(n_list)
     
     n_0=np.flipud(n_list)
-    Ex_0=np.flipud(Ex)
-    Ey_0=np.flipud(Ey)
+   # Ex_0=np.flipud(Ex)
+   # Ey_0=np.flipud(Ey)
     Ez_0=np.flipud(Ez)
 
 
     
-    I=np.abs(Ex_0)**2   + np.abs(Ey_0)**2+  np.abs(Ez_0)**2
+    I=  np.abs(Ez_0)**2
     I_max=max(I)
     I=n_max*I/I_max
     
